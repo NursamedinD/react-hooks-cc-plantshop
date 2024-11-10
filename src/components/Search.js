@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 function Search({ onSearchChange }) {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchPlant, setSearchPlant] = useState("");
 
   function handleSearchChange(e) {
-    setSearchTerm(e.target.value);
+    setSearchPlant(e.target.value);
     onSearchChange(e.target.value);
   }
 
@@ -15,7 +15,7 @@ function Search({ onSearchChange }) {
         type="text"
         id="search"
         placeholder="Type a name to search..."
-        value={searchTerm}
+        value={searchPlant}
         onChange={handleSearchChange}
       />
     </div>
