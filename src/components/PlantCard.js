@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 function PlantCard({ plant, onUpdatePlant }) {
-  const [soldOut, setSoldOut] = useState(plant.soldOut || false);
+  const [isSoldOut, setSoldOut] = useState(plant.isSoldOut || false);
 
   function handleSoldOutClick() {
-    setSoldOut(!soldOut);
-    const updatedPlant = { ...plant, soldOut: !soldOut };
+    setSoldOut(!isSoldOut);
+    const updatedPlant = { ...plant, isSoldOut: !isSoldOut };
     onUpdatePlant(updatedPlant);
   }
 
@@ -15,7 +15,7 @@ function PlantCard({ plant, onUpdatePlant }) {
       <h4>{plant.name}</h4>
       <p>Price: {plant.price}</p>
       <button className="primary" onClick={handleSoldOutClick}>
-        {soldOut ? "Out of Stock" : "In Stock"}
+        {isSoldOut ? "Out of Stock" : "In Stock"}
       </button>
     </li>
   );
